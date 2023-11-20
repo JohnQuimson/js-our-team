@@ -1,5 +1,7 @@
 'use strict';
 
+const container = document.querySelector('.container');
+
 const membriTeam = [
   {
     nome: 'Wayne Barnett',
@@ -34,8 +36,14 @@ const membriTeam = [
 ];
 
 for (let i = 0; i < membriTeam.length; i++) {
+  const contDati = document.createElement('div');
+
   for (let key in membriTeam[i]) {
-    console.log(`${key}: ${membriTeam[i][key]}`);
+    const infoMember = document.createElement('p');
+    infoMember.textContent = `${key}: ${membriTeam[i][key]}`;
+    contDati.appendChild(infoMember);
   }
-  console.log('');
+
+  // Aggiunta dell'elemento contDati al container
+  container.appendChild(contDati);
 }
